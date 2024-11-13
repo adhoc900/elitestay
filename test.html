@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Incrementer</title>
+</head>
+<body>
+    <h2>Select a Date</h2>
+    <input type="date" id="selectedDate">
+
+    <button onclick="displayDateIncrements()">Show Increments</button>
+
+    <div id="result" style="margin-top: 20px;">
+        <!-- Results will be displayed here -->
+    </div>
+
+    <script>
+        function addDays(date, days) {
+            const result = new Date(date);
+            result.setDate(result.getDate() + days);
+            return result;
+        }
+
+        function addWeeks(date, weeks) {
+            return addDays(date, weeks * 7); // One week is 7 days
+        }
+
+        function addMonths(date, months) {
+            const result = new Date(date);
+            result.setMonth(result.getMonth() + months);
+            return result;
+        }
+
+        function displayDateIncrements() {
+            const dateInput = document.getElementById("selectedDate").value;
+            if (!dateInput) {
+                alert("Please select a date first!");
+                return;
+            }
+
+            const selectedDate = new Date(dateInput);
+
+            const datePlusOneDay = addDays(selectedDate, 1);
+            const datePlusOneWeek = addWeeks(selectedDate, 1);
+            const datePlusOneMonth = addMonths(selectedDate, 1);
+
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `
+                <p>Selected Date: ${selectedDate.toDateString()}</p>
+                <p>Date plus 1 day: ${datePlusOneDay.toDateString()}</p>
+                <p>Date plus 1 week: ${datePlusOneWeek.toDateString()}</p>
+                <p>Date plus 1 month: ${datePlusOneMonth.toDateString()}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
