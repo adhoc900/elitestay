@@ -35,7 +35,7 @@ if (apartment) {
         <div id="rating" class="mb-4 text-sm"></div>
         <p><strong class="adhd">Room features</strong><br>${apartment.features ? apartment.features : "N/A"}</p>
         <p><strong class="adhd">Amenities</strong><br>${apartment.amenities ? apartment.amenities : "N/A"}</p>
-        <p class="pricing"><strong class="adhd">Pricing</strong><br>Night rate: <b class="text-primary">${apartment.night}</b><br>Weekly rate: <b class="text-primary">${apartment.week}</b><br>Monthly rate: <b class="text-primary">${apartment.month}</b></p>
+        <p class="pricing"><strong class="adhd">Pricing</strong><br>Stay for a night: <b class="text-primary">${apartment.night}</b><br>Stay for a week: <b class="text-primary">${apartment.week}</b><br>Stay for a month: <b class="text-primary">${apartment.month}</b></p>
     `;
     
     // Initialize the Owl Carousel
@@ -71,20 +71,6 @@ if (apartment) {
     book.style.display = 'none';
     apartmentList.innerHTML = '<h6 class="my-4">Apartment not found.</h6> <a href="property-list.html" class="d-block btn btn-primary py-2 px-4 animated fadeIn">Apartments List</a>';
 }
-
-
-document.getElementById("emailButton").addEventListener("click", () => {
-    // Customize email parameters
-    const recipient = "elitestayapartment@outlook.com";
-    const subject = "Inquiry about apartments";
-    const body = "Hello, I would like to know more about your apartment listings.";
-
-    // Create mailto link with subject and body
-    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    // Open mailto link
-    window.location.href = mailtoLink;
-});
 
 function bookApartment() {
     localStorage.clear();

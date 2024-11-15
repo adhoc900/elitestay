@@ -34,7 +34,7 @@ footer.innerHTML = `
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-white mb-4">Get In Touch</h5>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-2"></i>Yonge St Unit 8, Richmond Hill, ON L4C 3C7, Canada</p>
                         <p class="mb-2"><i class="fab fa-whatsapp me-3"></i>+012 345 67890</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                         <div class="d-flex pt-2">
@@ -119,4 +119,3 @@ document.getElementById("oneBedroomA").addEventListener("click", oneBedroom);
 document.getElementById("twoBedroomA").addEventListener("click", twoBedroom);
 
 document.getElementById("luxuryA").addEventListener("click", luxury);
-
