@@ -22,17 +22,42 @@ window.onclick = function(event) {
     }
 }
 
+const categoriesSubcategories = {
+    "for sale": ["Studio", "1 bedroom", "2 bedrooms", "3 bedrooms", "4 bedrooms", "5 bedrooms", "6 bedrooms", "Mansion"],
+    "for rent": ["Studio", "1 bedroom", "2 bedrooms", "3 bedrooms", "4 bedrooms", "5 bedrooms", "6 bedrooms", "Mansion"],
+    "service apartment": ["Studio", "1 bedroom", "2 bedrooms", "3 bedrooms", "4 bedrooms", "5 bedrooms", "6 bedrooms"],
+};
+
+// Populate property type based on category selection
+function populateSubCategories() {
+    const categorySelect = document.getElementById("category");
+    const subCategorySelect = document.getElementById("sub-category");
+    const selectedCategory = categorySelect.value;
+
+    subCategorySelect.innerHTML = "<option value=''>Select property type</option>";
+
+    if (selectedCategory && categoriesSubcategories[selectedCategory]) {
+        categoriesSubcategories[selectedCategory].forEach(subcat => {
+            const option = document.createElement("option");
+            option.value = subcat;
+            option.textContent = subcat;
+            subCategorySelect.appendChild(option);
+        });
+    }
+}
+
+
 const countriesCities = {
-    "United States": ["New York City", "San Francisco", "Chicago", "Los Angeles"],
+    "United States": ["New York", "San Francisco", "Chicago", "Los Angeles"],
     "United Kingdom": ["London", "Manchester", "Birmingham", "Edinburgh"],
-    "Germany": ["Berlin", "Munich", "Frankfurt", "Hamburg"],
-    "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth"],
     "Canada": ["Toronto", "Vancouver", "Montreal", "Calgary"],
+    /*"Germany": ["Berlin", "Munich", "Frankfurt", "Hamburg"],
+    "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth"],
     "Singapore": ["Singapore City"],
     "United Arab Emirates": ["Dubai", "Abu Dhabi"],
     "France": ["Paris", "Lyon"],
     "Spain": ["Barcelona", "Madrid"],
-    "Italy": ["Rome", "Milan", "Venice", "Florence"],
+    "Italy": ["Rome", "Milan", "Venice", "Florence"],*/
 };
 
 // Populate cities based on country selection
@@ -57,60 +82,62 @@ document.getElementById("country").addEventListener('change', () => {
     populateCities();
 })
 
+document.getElementById("category").addEventListener('change', () => {
+    populateSubCategories();
+})
+
 // Save filters to localStorage and redirect
 function applyFilter() {
     const categorySelect = document.getElementById("category");
+    const subCategorySelect = document.getElementById("sub-category");
     const countrySelect = document.getElementById("country");
     const citySelect = document.getElementById("city");
 
     const selectedCategory = categorySelect.value;
+    const selectedSubCategory = subCategorySelect.value;
     const selectedCountry = countrySelect.value;
     const selectedCity = citySelect.value;
 
+    //console.log(selectedCategory, selectedSubCategory, selectedCountry, selectedCity);
+
     localStorage.clear();
     localStorage.setItem("selectedCategory", selectedCategory);
+    localStorage.setItem("selectedSubCategory", selectedSubCategory);
     localStorage.setItem("selectedCountry", selectedCountry);
     localStorage.setItem("selectedCity", selectedCity);
 
     filterModal.style.display = 'none';
-    
+
     filteredApartmentsList();
 }
 
 function filteredApartmentsList() {
     const allApartments = document.getElementById('all-apartments');
     allApartments.innerHTML = "";
-    
-    let selectedCategory, selectedCountry, selectedCity;
+
+    let selectedCategory, selectedSubCategory, selectedCountry, selectedCity;
 
     // Retrieve selected filters from localStorage
-    if (localStorage.getItem("selectedCategory") || localStorage.getItem("selectedCountry") || localStorage.getItem("selectedCity")) {
+    if (localStorage.getItem("selectedCategory") || localStorage.getItem("selectedSubCategory") || localStorage.getItem("selectedCountry") || localStorage.getItem("selectedCity")) {
         selectedCategory = localStorage.getItem("selectedCategory");
+        selectedSubCategory = localStorage.getItem("selectedSubCategory");
         selectedCountry = localStorage.getItem("selectedCountry");
         selectedCity = localStorage.getItem("selectedCity");
-        if (selectedCategory == "at") {
-            selectedCategory = '';
-        }
-        if(selectedCountry == "sac") {
-            selectedCountry = '';
-        }
-        if (selectedCity == "city") {
-            selectedCity = '';
-        }
     }
-    
+
     const filteredApartments = apartments.filter(apartment => {
         return (
             (!selectedCategory || apartment.category === selectedCategory) && // Match category if selected
+            (!selectedSubCategory || apartment.subCategory === selectedSubCategory) &&
             (!selectedCountry || apartment.country === selectedCountry) && // Match country if selected
             (!selectedCity || apartment.city === selectedCity) // Match city if selected
         );
     });
-    
+
     filteredApartments.forEach(apartment => {
         const singleApartment = document.createElement('div');
         singleApartment.classList.add('col-6', 'col-md-4', 'col-lg-3');
-    
+
         singleApartment.innerHTML = `
                     <a href="apartment-details.html?id=${apartment.id}">
                         <div class="property-item rounded overflow-hidden">
@@ -141,7 +168,7 @@ function filteredApartmentsList() {
                 `;
         allApartments.appendChild(singleApartment);
     });
-    
+
     function generateStars(rating) {
         let starsHtml = '';
         const totalStars = 5;
@@ -155,9 +182,30 @@ function filteredApartmentsList() {
 function clearFilter() {
     localStorage.clear();
     filteredApartmentsList();
+    
+    /*console.log(
+        localStorage.getItem("selectedCategory"),
+        localStorage.getItem("selectedSubCategory"),
+        localStorage.getItem("selectedCountry"),
+        localStorage.getItem("selectedCity")
+    );*/
 }
 
 // Add event listener for filter button
 document.getElementById("applyFilter").addEventListener("click", applyFilter);
 
 document.getElementById("clearFilter").addEventListener("click", clearFilter);
+
+let s_c = document.getElementById("sub-category");
+if(localStorage.getItem("selectedSubCategory")) {
+    s_c.value = localStorage.getItem("selectedSubCategory");
+}
+
+console.log(
+    localStorage.getItem("selectedCategory"), 
+    localStorage.getItem("selectedSubCategory"), 
+    localStorage.getItem("selectedCountry"), 
+    localStorage.getItem("selectedCity")
+    );
+    
+    

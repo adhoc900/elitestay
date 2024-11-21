@@ -51,30 +51,36 @@
                             <div class="modal-body">
                                 <!-- Filter Options moved to Modal -->
                                 <div class="mb-4">
-                                    <label for="category">Choose apartment type</label>
+                                    <label for="category">Buy/Rent/Service apartment</label>
                                     <select id="category" class="form-select py-2">
-                                        <option selected value="at">Apartment</option>
-                                        <option value="sa">Studio apartment</option>
-                                        <option value="1ba">One bedroom apartment</option>
-                                        <option value="2ba">Two bedroom apartment</option>
-                                        <option value="la">Luxury apartment</option>
+                                        <option selected value="">Buy/Rent/Service Apartment</option>
+                                        <option value="for sale">Properties for sale</option>
+                                        <option value="for rent">Properties for rent</option>
+                                        <option value="service apartment">Service apartments</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="sub-category">Select property type</label>
+                                    <select id="sub-category" class="form-select py-2">
+                                        <option value="">Property type</option>
                                     </select>
                                 </div>
 
                                 <div class="mb-4">
                                     <label for="country">Select a country</label>
                                     <select id="country" class="form-select py-2">
-                                        <option selected value="sac">Country</option>
+                                        <option selected value="">Country</option>
                                         <option value="United States">United States</option>
-                                        <option value="United Kingdom">United Kingdom</option>
-                                        <option value="Germany">Germany</option>
+                                        <option value="United Kingdom" disabled>United Kingdom</option>
+                                        <option value="Canada" disabled>Canada</option>
+                                        <!--<option value="Germany">Germany</option>
                                         <option value="Australia">Australia</option>
-                                        <option value="Canada">Canada</option>
                                         <option value="Singapore">Singapore</option>
                                         <option value="United Arab Emirates">United Arab Emirates</option>
                                         <option value="France">France</option>
                                         <option value="Spain">Spain</option>
-                                        <option value="Italy">Italy</option>
+                                        <option value="Italy">Italy</option>-->
                                     </select>
                                 </div>
 
@@ -99,7 +105,7 @@
         <!-- Property List End -->
 
         <!-- Footer Start -->
-        <div id="footer" class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"></div>
+        <div id="footer" class="container-fluid bg-dark text-white-50 footer pt-5 wow fadeIn" data-wow-delay="0.1s"></div>
         <!-- Footer End -->
 
         <!-- Back to Top -->

@@ -105,7 +105,6 @@
     padding: 25px 0;
     color: #FFFFFF;
     font-size: 15px;
-    text-transform: uppercase;
     outline: none;
 }
 
@@ -193,6 +192,32 @@
     right: 0;
 }
 
+.home-slide {
+    position: relative;
+}
+
+.home-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.home-slide .carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: 900;
+    font-size: 30px;
+    text-align: center;
+    line-height: 35px;
+}
+
 .breadcrumb-item+.breadcrumb-item::before {
     color: #DDDDDD;
 }
@@ -239,6 +264,7 @@
 
 /*** About ***/
 .about-img img {
+    width: 80%;
     position: relative;
     z-index: 2;
 }
@@ -251,7 +277,7 @@
     width: 100%;
     height: 100%;
     background: var(--primary);
-    transform: skew(20deg);
+    transform: skew(50deg);
     z-index: 1;
 }
 
@@ -475,7 +501,7 @@
 }
 
 .ypsa {
-    width: 230px;
+    width: 300px;
     padding: 5px;
     border: 4px dashed greenyellow;
 }
@@ -541,27 +567,27 @@ p .adhd {
     left: 0;
 }
 
-payment-container {
+.payment-container {
     display: flex;
     flex-direction: column;
+    justify-content: start;
     align-items: center;
     gap: 10px;
     width: 300px;
-    margin: 0 auto;
-  }
-  
-  .payment-method {
-      position: relative;
-      width: 300px;
-  }
+}
 
-  .payment-method input[type="radio"] {
-      position: absolute;
-      right: 15px;
-      top: 14.5px;
-  }
-  
-  .payment-method label {
+.payment-method {
+    position: relative;
+    width: 300px;
+}
+
+.payment-method input[type="radio"] {
+    position: absolute;
+    right: 15px;
+    top: 14.5px;
+}
+
+.payment-method label {
     display: block;
     padding: 10px 15px;
     margin-bottom: 15px;
@@ -572,17 +598,24 @@ payment-container {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
-  }
+}
 
-  /* Selected radio button style */
-  .payment-method input[type="radio"]:checked + label {
+.payment-method input[type="radio"]:checked+label {
     background-color: lightskyblue;
     color: white;
     border-color: lightskyblue;
-  }
-  
-  #continueBtn {
-    width:300px;
+}
+
+.text-bitcoin {
+    color: goldenrod;
+}
+
+.text-paypal {
+    color: blue;
+}
+
+#continueBtn {
+    width: 300px;
     display: none;
     padding: 15px 10px;
     text-align: center;
@@ -592,9 +625,94 @@ payment-container {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+}
 
-  #continueBtn:hover {
+#continueBtn:hover {
     background-color: #45a049;
-  }
+}
 
+#pay-to {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .65);
+    z-index: 99999;
+}
+
+#pay-to-inner {
+    position: relative;
+    width: 300px;
+    height: 520px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#close-pay-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+}
+
+.pay-qrcode-wrp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.pay-qrcode-wrp img {
+    width: 70%;
+    height: auto;
+}
+
+.pay-address-wrp {
+    margin-bottom: 20px;
+}
+
+#copied {
+    display: none;
+}
+
+#copy-button {
+    position: absolute;
+    right: 30px;
+    bottom: 115px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    outline: none;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 2px 7px;
+    background-color: #fff;
+}
+
+#i-have-paid {
+    position: absolute;
+    bottom: 30px;
+    width: 80%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 9px;
+    color: #fff;
+    background-color: #6c757d;
+    cursor: not-allowed;
+    transition: background-color 0.3s;
+}
+
+#i-have-paid.enabled {
+    color: #000;
+    background-color: lawngreen;
+    cursor: pointer;
+}
+
+#footer {
+    margin-top: 150px;
+}

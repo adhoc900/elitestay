@@ -9,16 +9,6 @@ const apartmentList = document.getElementById('apartment-list');
 const book = document.getElementById('book');
 const bookNow = document.getElementById('bookNow');
 
-if(apartment.category == "sa") {
-    apartment.category = "Studio Apartment"
-} if(apartment.category == "1ba") {
-    apartment.category = "1 bedroom Apartment"
-} if (apartment.category == "2ba") {
-    apartment.category = "2 bedroom Apartment"
-} if (apartment.category == "la") {
-    apartment.category = "Luxury Apartment"
-}
-
 if (apartment) {
     const images = apartment.images.map((img, index) => {
         return `<div class="owl-carousel-item" id="item${index}"><img class="img-fluid" src="${img}" alt="image"></div>`;
@@ -30,11 +20,11 @@ if (apartment) {
     
     apartmentInfo.innerHTML = `
         <h6 class="fs-sm m-0 mb-2 p-0 lh-sm ellipsis">${apartment.title}</h6>
-        <h6 class="text-xs acat-color m-0 mb-2 p-0 lh-sm ellipsis">${apartment.category}</h6>
+        <h6 class="text-xs acat-color m-0 mb-2 p-0 lh-sm ellipsis">${apartment.subCategory} ${apartment.category}</h6>
         <p class="addrs text-sm m-0 mb-2 p-0 lh-sm ellipsis"><i class="fa fa-map-marker-alt text-primary me-1"></i>${apartment.street}, ${apartment.city}, ${apartment.country}</p>
         <div id="rating" class="mb-4 text-sm"></div>
-        <p><strong class="adhd">Room features</strong><br>${apartment.features ? apartment.features : "N/A"}</p>
-        <p><strong class="adhd">Amenities</strong><br>${apartment.amenities ? apartment.amenities : "N/A"}</p>
+        <p><strong class="adhd">Description</strong><br>${apartment.features ? apartment.features : "N/A"}</p>
+        <p><strong class="adhd">Room Features/Amenities</strong><br>${apartment.amenities ? apartment.amenities : "N/A"}</p>
         <p class="pricing"><strong class="adhd">Pricing</strong><br>Stay for a night: <b class="text-primary">${apartment.night}</b><br>Stay for a week: <b class="text-primary">${apartment.week}</b><br>Stay for a month: <b class="text-primary">${apartment.month}</b></p>
     `;
     
