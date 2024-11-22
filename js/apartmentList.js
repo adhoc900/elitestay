@@ -42,7 +42,7 @@ export const apartments = [
     {
         id: 3,
         category: "for sale",
-        subCategory: "4 bedroom",
+        subCategory: "4 bedrooms",
         title: "Studio Apartment at Anagram NoMad in The Flatiron District, NYC",
         features: "This sophisticated studio apartment is located in a 50-story high rise above Madison Square Park. The stylish apartment features gorgeous finishes, including stainless steel appliances, granite countertops, hardwood floors and spacious closets. The bed provided is queen size. Building amenities include a full-service concierge, a 24-hour attended lobby, a fitness center, laundry facilities and a wraparound roof deck.",
         amenities: "1 Bathroom •• Smart TV with streaming services •• Wi-Fi •• AC & heating •• Fully equipped kitchen •• In-unit washer & dryer •• 24/7 security •• 24/7 Guest Service •• Fitness center •• Cleaning service •• etc..",
@@ -122,7 +122,7 @@ export const apartments = [
     {
         id: 7,
         category: "for sale",
-        subCategory: "5 bedroom",
+        subCategory: "5 bedrooms",
         title: "Studio Apartment at Anagram NoMad in The Flatiron District, NYC",
         features: "This sophisticated studio apartment is located in a 50-story high rise above Madison Square Park. The stylish apartment features gorgeous finishes, including stainless steel appliances, granite countertops, hardwood floors and spacious closets. The bed provided is queen size. Building amenities include a full-service concierge, a 24-hour attended lobby, a fitness center, laundry facilities and a wraparound roof deck.",
         amenities: "1 Bathroom •• Smart TV with streaming services •• Wi-Fi •• AC & heating •• Fully equipped kitchen •• In-unit washer & dryer •• 24/7 security •• 24/7 Guest Service •• Fitness center •• Cleaning service •• etc..",

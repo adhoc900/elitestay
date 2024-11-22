@@ -70,14 +70,14 @@ function filterApartmentsAndRedirect() {
     localStorage.setItem("selectedCountry", selectedCountry);
     localStorage.setItem("selectedCity", selectedCity);
     
-    console.log(
+    /*console.log(
         localStorage.getItem("selectedCategory"),
         localStorage.getItem("selectedSubCategory"),
         localStorage.getItem("selectedCountry"),
         localStorage.getItem("selectedCity")
-    );
+    );*/
     
-    //window.location.href = "property-list.html"; // Redirect to the property listing page
+    window.location.href = "property-list.html"; // Redirect to the property listing page
 }
 
 function clearLocalStorage() {

@@ -5,27 +5,20 @@ import { apartments } from './apartmentList.js'; // Import apartments array from
 document.addEventListener('DOMContentLoaded', () => {
     const allApartments = document.getElementById('all-apartments');
 
-    let selectedCategory, selectedCountry, selectedCity;
+    let selectedCategory, selectedSubCategory, selectedCountry, selectedCity;
 
     // Retrieve selected filters from localStorage
-    if (localStorage.getItem("selectedCategory") || localStorage.getItem("selectedCountry") || localStorage.getItem("selectedCity")) {
+    if (localStorage.getItem("selectedCategory") || localStorage.getItem("selectedSubCategory") || localStorage.getItem("selectedCountry") || localStorage.getItem("selectedCity")) {
         selectedCategory = localStorage.getItem("selectedCategory");
+        selectedSubCategory = localStorage.getItem("selectedSubCategory");
         selectedCountry = localStorage.getItem("selectedCountry");
         selectedCity = localStorage.getItem("selectedCity");
-        if (selectedCategory == "at") {
-            selectedCategory = '';
-        }
-        if(selectedCountry == "sac") {
-            selectedCountry = '';
-        }
-        if (selectedCity == "city") {
-            selectedCity = '';
-        }
     }
 
     const filteredApartments = apartments.filter(apartment => {
         return (
             (!selectedCategory || apartment.category === selectedCategory) && // Match category if selected
+            (!selectedSubCategory || apartment.subCategory === selectedSubCategory) && // Match category if selected
             (!selectedCountry || apartment.country === selectedCountry) && // Match country if selected
             (!selectedCity || apartment.city === selectedCity) // Match city if selected
         );
