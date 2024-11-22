@@ -16,7 +16,7 @@ export const apartments = [
         country: "United States",
         rating: "4",
         rated: "(37)",
-        popular: true,
+        popular: false,
         images: ["../img/id1-1.jpg", "../img/id1-2.jpg", "../img/id1-3.jpg", "../img/id1-4.jpg", "../img/id1-5.jpg", "../img/id1-6.jpg"]
     },
     {
@@ -56,7 +56,7 @@ export const apartments = [
         country: "United States",
         rating: "5",
         rated: "(102)",
-        popular: true,
+        popular: false,
         images: ["../img/id2-1.jpg", "../img/id2-2.jpg", "../img/id2-3.jpg", "../img/id2-4.jpg", "../img/id2-5.jpg", "../img/id2-6.jpg", "../img/id2-7.png", "../img/id2-8.png", "../img/id2-9.png", "../img/id2-10.png", "../img/id2-11.png"]
     },
     {
@@ -136,7 +136,7 @@ export const apartments = [
         country: "United States",
         rating: "5",
         rated: "(102)",
-        popular: true,
+        popular: false,
         images: ["../img/id2-1.jpg", "../img/id2-2.jpg", "../img/id2-3.jpg", "../img/id2-4.jpg", "../img/id2-5.jpg", "../img/id2-6.jpg", "../img/id2-7.png", "../img/id2-8.png", "../img/id2-9.png", "../img/id2-10.png", "../img/id2-11.png"]
     },
     {
@@ -156,7 +156,7 @@ export const apartments = [
         country: "United States",
         rating: "5",
         rated: "(102)",
-        popular: true,
+        popular: false,
         images: ["../img/id2-1.jpg", "../img/id2-2.jpg", "../img/id2-3.jpg", "../img/id2-4.jpg", "../img/id2-5.jpg", "../img/id2-6.jpg", "../img/id2-7.png", "../img/id2-8.png", "../img/id2-9.png", "../img/id2-10.png", "../img/id2-11.png"]
     },
     {
@@ -176,7 +176,7 @@ export const apartments = [
         country: "United States",
         rating: "5",
         rated: "(102)",
-        popular: true,
+        popular: false,
         images: ["../img/id2-1.jpg", "../img/id2-2.jpg", "../img/id2-3.jpg", "../img/id2-4.jpg", "../img/id2-5.jpg", "../img/id2-6.jpg", "../img/id2-7.png", "../img/id2-8.png", "../img/id2-9.png", "../img/id2-10.png", "../img/id2-11.png"]
     },
     {
@@ -196,7 +196,7 @@ export const apartments = [
         country: "United States",
         rating: "5",
         rated: "(102)",
-        popular: true,
+        popular: false,
         images: ["../img/id2-1.jpg", "../img/id2-2.jpg", "../img/id2-3.jpg", "../img/id2-4.jpg", "../img/id2-5.jpg", "../img/id2-6.jpg", "../img/id2-7.png", "../img/id2-8.png", "../img/id2-9.png", "../img/id2-10.png", "../img/id2-11.png"]
     },
     {
@@ -216,7 +216,7 @@ export const apartments = [
         country: "United States",
         rating: "5",
         rated: "(102)",
-        popular: true,
+        popular: false,
         images: ["../img/id2-1.jpg", "../img/id2-2.jpg", "../img/id2-3.jpg", "../img/id2-4.jpg", "../img/id2-5.jpg", "../img/id2-6.jpg", "../img/id2-7.png", "../img/id2-8.png", "../img/id2-9.png", "../img/id2-10.png", "../img/id2-11.png"]
     },
     

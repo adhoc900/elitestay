@@ -6,7 +6,7 @@ navBar.innerHTML = `
                     <div class="icon p-2 me-2">
                         <i class="fas fa-home text-primary"></i>
                     </div>
-                    <h4 class="m-0 text-primary">EliteDwell</h4>
+                    <h4 class="m-0 text-primary">ElitesDwell</h4>
                 </a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -17,38 +17,39 @@ navBar.innerHTML = `
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Properties for sale</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a id="fs-sa" class="dropdown-item">Studio for sale</a>
-                                <a id="fs-1b" class="dropdown-item">1 bedroom for sale</a>
-                                <a id="fs-2b" class="dropdown-item">2 bedrooms for sale</a>
-                                <a id="fs-3b" class="dropdown-item">3 bedrooms for sale</a>
-                                <a id="fs-4b" class="dropdown-item">4 bedrooms for sale</a>
-                                <a id="fs-5b" class="dropdown-item">5 bedrooms for sale</a>
-                                <a id="fs-6b" class="dropdown-item">6 bedrooms for sale</a>
-                                <a id="fs-ma" class="dropdown-item">Mansion for sale</a>
+                                <a id="buy-studio" class="dropdown-item">Studio for sale</a>
+                                <a id="buy1bed" class="dropdown-item">1 bedroom for sale</a>
+                                <a id="buy2bed" class="dropdown-item">2 bedrooms for sale</a>
+                                <a id="buy3bed" class="dropdown-item">3 bedrooms for sale</a>
+                                <a id="buy4bed" class="dropdown-item">4 bedrooms for sale</a>
+                                <a id="buy5bed" class="dropdown-item">5 bedrooms for sale</a>
+                                <a id="buy6bed" class="dropdown-item">6 bedrooms for sale</a>
+                                <a id="buy-mansion" class="dropdown-item">Mansion for sale</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Properties for rent</a>
                            <div class="dropdown-menu rounded-0 m-0">
-                                <a id="fr-sa" class="dropdown-item">Studio for rent</a>
-                                <a id="fr-1b" class="dropdown-item">1 bedroom for rent</a>
-                                <a id="fr-2b" class="dropdown-item">2 bedrooms for rent</a>
-                                <a id="fr-3b" class="dropdown-item">3 bedrooms for rent</a>
-                                <a id="fr-4b" class="dropdown-item">4 bedrooms for rent</a>
-                                <a id="fr-5b" class="dropdown-item">5 bedrooms for rent</a>
-                                <a id="fr-6b" class="dropdown-item">6 bedrooms for rent</a>
+                                <a id="rent-studio" class="dropdown-item">Studio for rent</a>
+                                <a id="rent1bed" class="dropdown-item">1 bedroom for rent</a>
+                                <a id="rent2bed" class="dropdown-item">2 bedrooms for rent</a>
+                                <a id="rent3bed" class="dropdown-item">3 bedrooms for rent</a>
+                                <a id="rent4bed" class="dropdown-item">4 bedrooms for rent</a>
+                                <a id="rent5bed" class="dropdown-item">5 bedrooms for rent</a>
+                                <a id="rent6bed" class="dropdown-item">6 bedrooms for rent</a>
+                                <a id="rent-mansion" class="dropdown-item">Mansion for rent</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service apartments</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a id="fs-sa" class="dropdown-item">Studio apartments</a>
-                                <a id="fs-1b" class="dropdown-item">1 bedroom apartment</a>
-                                <a id="fs-2b" class="dropdown-item">2 bedrooms apartment</a>
-                                <a id="fs-3b" class="dropdown-item">3 bedrooms apartment</a>
-                                <a id="fs-4b" class="dropdown-item">4 bedrooms apartment</a>
-                                <a id="fs-5b" class="dropdown-item">5 bedrooms apartment</a>
-                                <a id="fs-6b" class="dropdown-item">6 bedrooms apartment</a>
+                                <a id="sa-studio" class="dropdown-item">Studio apartments</a>
+                                <a id="sa1bed" class="dropdown-item">1 bedroom apartment</a>
+                                <a id="sa2bed" class="dropdown-item">2 bedrooms apartment</a>
+                                <a id="sa3bed" class="dropdown-item">3 bedrooms apartment</a>
+                                <a id="sa4bed" class="dropdown-item">4 bedrooms apartment</a>
+                                <a id="sa5bed" class="dropdown-item">5 bedrooms apartment</a>
+                                <a id="sa6bed" class="dropdown-item">6 bedrooms apartment</a>
                             </div>
                         </div>
                         <a href="" class="nav-item nav-link">Sell a property</a>
@@ -109,38 +110,193 @@ footer.innerHTML = `
         </div>
 `
 
-function studio() {
+function buyStudio() {
     localStorage.clear();
-    localStorage.setItem("selectedCategory", "sa");
+    localStorage.setItem("selectedCategory", "for sale");
+    localStorage.setItem("selectedSubCategory", "Studio");
     window.location.href = "property-list.html"; // Redirect to the property listing page
 }
 
-function oneBedroom() {
+function buy1bed() {
     localStorage.clear();
-    localStorage.setItem("selectedCategory", "1ba");
+    localStorage.setItem("selectedCategory", "for sale");
+    localStorage.setItem("selectedSubCategory", "1 bedroom");
     window.location.href = "property-list.html"; // Redirect to the property listing page
 }
 
-function twoBedroom() {
+function buy2bed() {
     localStorage.clear();
-    localStorage.setItem("selectedCategory", "2ba");
+    localStorage.setItem("selectedCategory", "for sale");
+    localStorage.setItem("selectedSubCategory", "2 bedrooms");
     window.location.href = "property-list.html"; // Redirect to the property listing page
 }
 
-function luxury() {
+function buy3bed() {
     localStorage.clear();
-    localStorage.setItem("selectedCategory", "la");
+    localStorage.setItem("selectedCategory", "for sale");
+    localStorage.setItem("selectedSubCategory", "3 bedrooms");
     window.location.href = "property-list.html"; // Redirect to the property listing page
 }
 
-/*document.getElementById("studioA").addEventListener("click", studio);
+function buy4bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for sale");
+    localStorage.setItem("selectedSubCategory", "4 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
 
-document.getElementById("oneBedroomA").addEventListener("click", oneBedroom);
+function buy5bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for sale");
+    localStorage.setItem("selectedSubCategory", "5 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
 
-document.getElementById("twoBedroomA").addEventListener("click", twoBedroom);
+function buy6bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for sale");
+    localStorage.setItem("selectedSubCategory", "6 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
 
-document.getElementById("luxuryA").addEventListener("click", luxury);
-*/
+function buyMansion() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for sale");
+    localStorage.setItem("selectedSubCategory", "Mansion");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function rentStudio() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for rent");
+    localStorage.setItem("selectedSubCategory", "Studio");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function rent1bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for rent");
+    localStorage.setItem("selectedSubCategory", "1 bedroom");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function rent2bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for rent");
+    localStorage.setItem("selectedSubCategory", "2 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function rent3bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for rent");
+    localStorage.setItem("selectedSubCategory", "3 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function rent4bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for rent");
+    localStorage.setItem("selectedSubCategory", "4 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function rent5bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for rent");
+    localStorage.setItem("selectedSubCategory", "5 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function rent6bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for rent");
+    localStorage.setItem("selectedSubCategory", "6 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function rentMansion() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "for rent");
+    localStorage.setItem("selectedSubCategory", "Mansion");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function saStudio() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "service apartment");
+    localStorage.setItem("selectedSubCategory", "Studio");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function sa1bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "service apartment");
+    localStorage.setItem("selectedSubCategory", "1 bedroom");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function sa2bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "service apartment");
+    localStorage.setItem("selectedSubCategory", "2 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function sa3bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "service apartment");
+    localStorage.setItem("selectedSubCategory", "3 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function sa4bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "service apartment");
+    localStorage.setItem("selectedSubCategory", "4 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function sa5bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "service apartment");
+    localStorage.setItem("selectedSubCategory", "5 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+function sa6bed() {
+    localStorage.clear();
+    localStorage.setItem("selectedCategory", "service apartment");
+    localStorage.setItem("selectedSubCategory", "6 bedrooms");
+    window.location.href = "property-list.html"; // Redirect to the property listing page
+}
+
+
+document.getElementById("buy-studio").addEventListener("click", buyStudio);
+document.getElementById("buy1bed").addEventListener("click", buy1bed);
+document.getElementById("buy2bed").addEventListener("click", buy2bed);
+document.getElementById("buy3bed").addEventListener("click", buy3bed);
+document.getElementById("buy4bed").addEventListener("click", buy4bed);
+document.getElementById("buy5bed").addEventListener("click", buy5bed);
+document.getElementById("buy6bed").addEventListener("click", buy6bed);
+document.getElementById("buy-mansion").addEventListener("click", buyMansion);
+
+document.getElementById("rent-studio").addEventListener("click", rentStudio);
+document.getElementById("rent1bed").addEventListener("click", rent1bed);
+document.getElementById("rent2bed").addEventListener("click", rent2bed);
+document.getElementById("rent3bed").addEventListener("click", rent3bed);
+document.getElementById("rent4bed").addEventListener("click", rent4bed);
+document.getElementById("rent5bed").addEventListener("click", rent5bed);
+document.getElementById("rent6bed").addEventListener("click", rent6bed);
+document.getElementById("rent-mansion").addEventListener("click", rentMansion);
+
+document.getElementById("sa-studio").addEventListener("click", saStudio);
+document.getElementById("sa1bed").addEventListener("click", sa1bed);
+document.getElementById("sa2bed").addEventListener("click", sa2bed);
+document.getElementById("sa3bed").addEventListener("click", sa3bed);
+document.getElementById("sa4bed").addEventListener("click", sa4bed);
+document.getElementById("sa5bed").addEventListener("click", sa5bed);
+document.getElementById("sa6bed").addEventListener("click", sa6bed);
 
 
 
